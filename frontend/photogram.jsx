@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionApi from './util/session';
+import * as SessionApi from './util/session_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
