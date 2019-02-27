@@ -26,43 +26,50 @@ class SignUp extends React.Component {
   }
 
   render () {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <ul><h2>Photogram</h2></ul>
-        <ul><h3>Sign up to see photos and videos from your friends.</h3></ul>
-        <ul>
-          <input 
-            type="text"
-            placeholder="Email"
-            onChange={this.update('email')}
-            />
-        </ul>
-        <ul>
-          <input 
-            type="text"
-            placeholder="Full Name"
-            onChange={this.update('name')}
-            />
-        </ul>
-        <ul>
-          <input 
-            type="text"
-            placeholder="Username"
-            onChange={this.update('username')}
-            />
-        </ul>
-        <ul>
-          <input 
-            type="password"
-            placeholder="Password"
-            onChange={this.update('password')}
-            />
-        </ul>
-        <ul>
-          <input type="submit" name="Sign up" />
-        </ul>
-        <ul><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></ul>
-      </form>
+      return (
+      <div className='signup'>
+          <form className='form' onSubmit={this.handleSubmit}>
+            <div className='name' ><ul><h2>Photogram</h2></ul></div>
+            <div id='text'><ul><h3>Sign up to see photos and videos from your friends.</h3></ul></div>
+            <div className="inputField">
+              <input 
+                type="text"
+                placeholder="Email"
+                onChange={this.update('email')}
+                />
+            </div>
+            <div className="inputField">
+              <input 
+                type="text"
+                placeholder="Full Name"
+                onChange={this.update('name')}
+                />
+            </div>
+            <div className="inputField">
+              <input 
+                type="text"
+                placeholder="Username"
+                onChange={this.update('username')}
+                />
+            </div>
+            <div className="inputField">
+              <input 
+                type="password"
+                placeholder="Password"
+                onChange={this.update('password')}
+              />
+            </div>
+            <div className="inputField">
+              <input type="submit" value="Sign up" />
+            </div>
+            <div className="inputField">
+              <Link to={`/login`}>
+                <input type="submit" value="Log in" />
+              </Link>
+            </div>
+            <div id='text'><ul><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></ul></div>
+        </form>
+      </div>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SignIn extends React.Component {
 
@@ -8,6 +9,7 @@ class SignIn extends React.Component {
       username: "",
       password: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -18,31 +20,41 @@ class SignIn extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.signUp(this.state); //maybe chain a way to go straight to profile home page
+    this.props.login(this.state); //maybe chain a way to go straight to profile home page
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <ul><h2>Photogram</h2></ul>
-        <ul>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={this.update('username')}
-          />
-        </ul>
-        <ul>
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={this.update('password')}
-          />
-        </ul>
-        <ul>
-          <input type="submit" name="Log in" />
-        </ul>
-      </form>
+      <div className="signin" >
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="name"><h2>Photogram</h2></div>
+          <div className="inputField">
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={this.update('username')}
+            />
+          </div>
+          <div className="inputField">
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={this.update('password')}
+            />
+          </div>
+          <div className="inputField">
+            <input type="submit" value="Log in" />
+          </div>
+          <div className="inputField">
+          <div >
+              <label className="noAccount">Don't have an account?</label>
+            <Link to={`/signup`}>
+              <input type="submit" value="Sign up"/>
+            </Link>
+          </div>
+          </div>
+        </form>
+      </div >
     )
   }
 
