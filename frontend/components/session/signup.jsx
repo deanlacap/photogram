@@ -13,6 +13,7 @@ class SignUp extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   update (field) {
@@ -34,6 +35,12 @@ class SignUp extends React.Component {
     this.props.signUp(this.state); //maybe chain a way to go straight to profile home page
   }
 
+  handleDemoUser (event) {
+    event.preventDefault();
+    let user = {username: "dean", password: "password"};
+    this.props.login(user);
+  }
+
   // handleErrors (event) {
   //   event.preventDefault();
 
@@ -45,7 +52,8 @@ class SignUp extends React.Component {
         <div className='signup'>
             <form className='form' onSubmit={this.handleSubmit}>
               <div className='name' ><h2>Photogram</h2></div>
-              <div id='text'><ul><h3>Sign up to see photos and videos from your friends.</h3></ul></div>
+              <div id='text'><h3>Sign up to see photos and videos from your friends.</h3></div>
+              <button className="demoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
               <div className="inputField">
                 <input 
                   type="text"
