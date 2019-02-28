@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
-import { createNewUser } from '../../actions/session_actions';
+import { createNewUser, clearErrors } from '../../actions/session_actions';
 import SignUp from './signup';
 
 
-// const mapStateToProps = ({ errors }) => {
-//   return {
-//     errors: errors.session,
-//     formType: 'signup',
-//     navLink: <Link to="/login">log in instead</Link>,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors.sessionErrors,
+    // navLink: <Link to="/signup">log in instead</Link>,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     signUp: (user) => dispatch(createNewUser(user)),
+    clearErrors: clearErrors
   };
 };
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

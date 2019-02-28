@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -20,11 +21,24 @@ class SignUp extends React.Component {
     };
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
   handleSubmit (event) {
     event.preventDefault();
+
+    // if (errorLength > 0) {
+
+    // }
     this.props.signUp(this.state); //maybe chain a way to go straight to profile home page
   }
 
+  // handleErrors (event) {
+  //   event.preventDefault();
+
+  // }
+ 
   render () {
       return (
       <div className="signupDiv">
@@ -62,7 +76,8 @@ class SignUp extends React.Component {
               </div>
       
               <input className="submitButton" type="submit" value="Sign up" />
-              <div id='text'><ul><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></ul></div>
+              <label className="errors">{this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}</label>
+              <div id='text'><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></div>
           </form>
         </div>
         <div>

@@ -12,18 +12,27 @@ class SignIn extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  update(field) {
+  update (field) {
     return (event) => {
       this.setState({ [field]: event.target.value });
     };
   }
 
-  handleSubmit(event) {
+  handleSubmit (event) {
     event.preventDefault();
     this.props.login(this.state); //maybe chain a way to go straight to profile home page
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
   render() {
+    // let current_errors;
+    // if (this.state.errors.length > 0) {
+    //   let current_errors = this.state.errors;
+    // }
+
     return (
       <div className="signinDiv">
         <div className="signin" >
@@ -44,6 +53,7 @@ class SignIn extends React.Component {
               />
             </div>
               <input className="submitButton" type="submit" value="Log in" />
+            <label className="errors">{this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}</label>
           </form>
         </div >
         <div>

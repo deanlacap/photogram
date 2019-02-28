@@ -1,11 +1,19 @@
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 import SignIn from './signin';
+
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors.sessionErrors,
+    // navLink: <Link to="/signup">log in instead</Link>,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    login: (form) => dispatch(login(form))
+    login: (form) => dispatch(login(form)),
+    clearErrors: clearErrors
   });
 };
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

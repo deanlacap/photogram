@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["Username/Email already taken"], status: 422
+      render json: ["invalid sign up credentials; email/username/password required"], status: 422
     end
   end
 
