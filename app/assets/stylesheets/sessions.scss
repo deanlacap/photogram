@@ -12,6 +12,13 @@
   display: flex;
   background-color: white;
   justify-content: center;
+  max-width: 250px;
+  border: 1px solid #e6e6e6
+}
+
+.signupDiv {
+  display: flex;
+  justify-content: center;
 }
 
 .form {
@@ -23,7 +30,6 @@
   // width: 100%;
   border: 1px black;
   flex-direction: column;
-  max-width: 350px;
   // align-items: stretch;
   // align-self: center;
 }
@@ -41,7 +47,7 @@
   display: flex;
   justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .inputField {
@@ -52,10 +58,39 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.signUpButton {
+  display: flex;
+  justify-content: center;
+  background-color: #468fdc;
+  color: white;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 2px;
+  border: none;
+}
+
+input[type=text], input[type=password] {
+  border: 0px;
+  margin: 5px;
+  padding: 7px;
+}
+input[type=text]:focus, input[type=password]:focus {
+  border: 1px solid grey;
+  outline: none;
+}
+
 .noAccount {
   margin-right: 5px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: grey;
+  font-size: 12px;
+}
+
+.haveAccount {
+  margin-right: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: grey;
+  font-size: 10px;
 }
 
 //let divs = document.querySelectorAll("div");
