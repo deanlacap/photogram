@@ -29,3 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
 //Delete Me - Test Only
 window.SessionApi = SessionApi;
 window.logout = deleteSession;
+

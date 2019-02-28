@@ -25,36 +25,36 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="signin" >
-        <form className="form" onSubmit={this.handleSubmit}>
-          <div className="name"><h2>Photogram</h2></div>
-          <div className="inputField">
-            <input
-              type="text"
-              placeholder="Username"
-              onChange={this.update('username')}
-            />
-          </div>
-          <div className="inputField">
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={this.update('password')}
-            />
-          </div>
-          <div className="inputField">
-            <input type="submit" value="Log in" />
-          </div>
-          <div className="inputField">
-          <div >
-              <label className="noAccount">Don't have an account?</label>
+      <div className="signinDiv">
+        <div className="signin" >
+          <form className="form" onSubmit={this.handleSubmit}>
+            <div className="name"><h2>Photogram</h2></div>
+            <div className="inputField">
+              <input
+                type="text"
+                placeholder="Username"
+                onChange={this.update('username')}
+              />
+            </div>
+            <div className="inputField">
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={this.update('password')}
+              />
+            </div>
+              <input className="submitButton" type="submit" value="Log in" />
+          </form>
+        </div >
+        <div>
+          <div className="noAccount">
+            <label className='account'>Don't have an account?</label>
             <Link to={`/signup`}>
-              <input type="submit" value="Sign up"/>
+              <input className="redirect" type="submit" value="Sign up" />
             </Link>
           </div>
-          </div>
-        </form>
-      </div >
+        </div>
+      </div>
     )
   }
 

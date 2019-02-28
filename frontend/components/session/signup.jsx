@@ -61,16 +61,17 @@ class SignUp extends React.Component {
                 />
               </div>
       
-              <input className="signUpButton" type="submit" value="Sign up" />
-      
+              <input className="submitButton" type="submit" value="Sign up" />
               <div id='text'><ul><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></ul></div>
-              <div className="inputField">
-                  <label className='haveAccount'>Have an account?</label>
-                <Link to={`/login`}>
-                  <input type="submit" value="Log in" />
-                </Link>
-              </div>
           </form>
+        </div>
+        <div>
+          <div className="haveAccount">
+            <label className='account'>Have an account?</label>
+              <Link to={`/login`}>
+                <input className="redirect" type="submit" value="Log in" />
+            </Link>
+          </div>
         </div>
       </div>
     )
@@ -78,3 +79,4 @@ class SignUp extends React.Component {
 }
 
 export default SignUp;
+
