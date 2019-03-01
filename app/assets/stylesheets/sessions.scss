@@ -3,32 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .signin {
-  background-color: white;
   display: flex;
+  background-color: white;
   justify-content: center;
-  max-width: 250px;
-  border: 1px solid #e6e6e6;
-  height: 60%;
-  width: 30%;
+  // flex-direction: column;
+  width: 350px;
+  border: 1.5px solid #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+  height: 350px;
+  align-content: center;
+  // box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
 }
 
 .signinDiv {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #e6e6e6;
-  // height: 60%;
+    background-color: #fff;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .signup {
   display: flex;
   background-color: white;
   justify-content: center;
-  max-width: 250px;
- 
-  height: 60%;
-  width: 30%;
+  flex-direction: column;
+  max-width: 400px;
+  border: 1px solid #d9d9d9;
+  align-content: center;
 }
 
 .errors {
@@ -37,41 +41,76 @@
   font-size: 12px;
 }
 
-.signupDiv {
+.signup {
   display: flex;
+  background-color: white;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #e6e6e6;
+  // flex-direction: column;
+  width: 350px;
+  border: 1.5px solid #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+  height: 500px;
+  align-content: center;
+  // box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
+}
+
+.signupDiv {
+    background-color: #fff;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .form {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
-  box-sizing: content-box;
-  // width: 100%;
-  border: 1px black;
-  flex-direction: column;
-  // align-items: stretch;
-  // align-self: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-sizing: content-box;
+    border: 1px black;
+    flex-wrap: wrap;
 }
 
 .name {
   background-color: white;
   display: flex;
   justify-content: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Cookie', cursive;
+  font-size: 60px;
+  color: #262626
 }
-
-#text {
+.header-text {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+.text {
   background-color: white;
   color: #999999;
   display: flex;
   justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+}
+
+.login-footer-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.login-footer-text {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 150px;
+  margin-bottom: 20px;
 }
 
 .inputField {
@@ -90,11 +129,18 @@
   color: white;
   margin: 10px;
   // padding: 6px;
-  height: 20px;
+  height: 30px;
   border-radius: 2px;
   border: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  width: 75%;
+}
+
+.signUpDemoParent {
+  display: flex;
+  justify-content: center;
+  width: 500px;
 }
 
 .signUpDemoButton {
@@ -104,9 +150,24 @@
   color: white;
   margin: 10px;
   // padding: 6px;
-  height: 20px;
+  height: 30px;
   border-radius: 2px;
   border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  width: 75%;
+}
+
+.submitButtonParent {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+}
+
+.or-text {
+  width: 400px;
+  display: flex;
+  justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 12px;
 }
@@ -122,7 +183,7 @@
   border-radius: 2px;
   border: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 input[type=text], input[type=password] {
@@ -131,8 +192,8 @@ input[type=text], input[type=password] {
   // border-color: #d5d4d6;
   margin: 5px;
   padding: 7px;
-  font-size: 10px;
-  width: 180px;
+  font-size: 12px;
+  width: 220px;
   border-radius: 3px;
 }
 input[type=text]:focus, input[type=password]:focus {
@@ -143,15 +204,22 @@ input[type=text]:focus, input[type=password]:focus {
 .redirect {
   border: 0;
   font-size: 11px;
-  color: #468fdc
+  color: #468fdc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.haveAccountDiv {
+  display: flex;
+  justify-content: center;
+}
 .haveAccount {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 250px;
-  border: 1px solid #e6e6e6
+  width: 350px;
+  border: 1.5px solid #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
 }
 
 .noAccount {

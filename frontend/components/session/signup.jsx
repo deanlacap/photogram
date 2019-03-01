@@ -52,56 +52,70 @@ class SignUp extends React.Component {
  
   render () {
       return (
-      <div className="signupDiv">
-        <div className='signup'>
+        <>
+        <div className="signupDiv">
+          <div className='signup'>
+
+                <div className='name' ><h2>Photogram</h2></div>
+              <div className='header-text'>
+                <div className='text'>Sign up to see photos and videos from your friends.</div>
+              </div>
             <form className='form' onSubmit={this.handleSubmit}>
-              <div className='name' ><h2>Photogram</h2></div>
-              <div id='text'><h3>Sign up to see photos and videos from your friends.</h3></div>
-              <button className="signUpDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
-              <div id='text'><h3>OR</h3></div>
-              <div className="inputField">
-                <input 
-                  type="text"
-                  placeholder="Email"
-                  onChange={this.update('email')}
+              <div className="signUpDemoParent">
+                  <button className="signUpDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
+              </div>
+                <div className='or-text'>OR</div>
+                <div className="inputField">
+                  <input 
+                    type="text"
+                    placeholder="Email"
+                    onChange={this.update('email')}
+                    />
+                </div>
+                <div className="inputField">
+                  <input 
+                    type="text"
+                    placeholder="Full Name"
+                    onChange={this.update('name')}
+                    />
+                </div>
+                <div className="inputField">
+                  <input 
+                    type="text"
+                    placeholder="Username"
+                    onChange={this.update('username')}
+                    />
+                </div>
+                <div className="inputField">
+                  <input 
+                    type="password"
+                    placeholder="Password"
+                    onChange={this.update('password')}
                   />
+                </div>
+              <div className="submitButtonParent">
+                <input className="submitButton" type="submit" value="Sign up" />
               </div>
-              <div className="inputField">
-                <input 
-                  type="text"
-                  placeholder="Full Name"
-                  onChange={this.update('name')}
-                  />
-              </div>
-              <div className="inputField">
-                <input 
-                  type="text"
-                  placeholder="Username"
-                  onChange={this.update('username')}
-                  />
-              </div>
-              <div className="inputField">
-                <input 
-                  type="password"
-                  placeholder="Password"
-                  onChange={this.update('password')}
-                />
-              </div>
-      
-              <input className="submitButton" type="submit" value="Sign up" />
-              <label className="errors">{this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}</label>
-              <div id='text'><h3>By signing up, you agree to our Terms, Data Policy, and Cookies Policy.</h3></div>
-          </form>
+            </form>
+                <label className="errors">{this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}</label>
+                <div className="login-footer-parent">
+                  <div className='login-footer-text'>
+                      By signing up, you agree to our Terms, Data Policy, and Cookies Policy.
+                  </div>
+                </div>
+
+          </div>
         </div>
-        <div>
+
+        <div className="haveAccountDiv">
           <div className="haveAccount">
             <label className='account'>Have an account?</label>
-              <Link to={`/login`}>
-                <input className="redirect" type="submit" value="Log in" />
+            <Link to={`/login`}>
+              <input className="redirect" type="submit" value="Log in" />
             </Link>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
