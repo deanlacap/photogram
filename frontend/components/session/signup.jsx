@@ -35,6 +35,10 @@ class SignUp extends React.Component {
     this.props.signUp(this.state); //maybe chain a way to go straight to profile home page
   }
 
+  // componentDidUpdate() {
+  //   this.props.clearErrors();
+  // }
+
   handleDemoUser (event) {
     event.preventDefault();
     let user = {username: "dean", password: "password"};
@@ -53,7 +57,8 @@ class SignUp extends React.Component {
             <form className='form' onSubmit={this.handleSubmit}>
               <div className='name' ><h2>Photogram</h2></div>
               <div id='text'><h3>Sign up to see photos and videos from your friends.</h3></div>
-              <button className="demoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
+              <button className="signUpDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
+              <div id='text'><h3>OR</h3></div>
               <div className="inputField">
                 <input 
                   type="text"

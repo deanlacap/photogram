@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     signUp: (user) => dispatch(createNewUser(user)),
-    clearErrors: clearErrors,
+    clearErrors: () => dispatch(clearErrors()),
     login: (user) => dispatch(login(user))
   };
 };

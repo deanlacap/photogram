@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     login: (form) => dispatch(login(form)),
-    clearErrors: clearErrors
+    clearErrors: () => dispatch(clearErrors()),
   });
 };
 

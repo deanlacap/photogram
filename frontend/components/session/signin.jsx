@@ -10,6 +10,7 @@ class SignIn extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   update (field) {
@@ -25,6 +26,16 @@ class SignIn extends React.Component {
 
   componentWillUnmount () {
     this.props.clearErrors();
+  }
+
+  // componentDidUpdate () {
+  //   this.props.clearErrors();
+  // }
+
+  handleDemoUser(event) {
+    event.preventDefault();
+    let user = { username: "dean", password: "password" };
+    this.props.login(user);
   }
 
   render() {
@@ -53,6 +64,8 @@ class SignIn extends React.Component {
               />
             </div>
               <input className="submitButton" type="submit" value="Log in" />
+            <div id='text'><h3>OR</h3></div>
+            <button className="signInDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
             <label className="errors">{this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}</label>
           </form>
         </div >
