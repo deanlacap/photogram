@@ -97,7 +97,9 @@ class SignUp extends React.Component {
                 <input className="submitButton" type="submit" value="Sign up" />
               </div>
             </form>
-                <label className="errors">{this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}</label>
+              <div className="errorsDiv">
+                <label className="errors">{this.props.errors.map((error,idx) => <ul key={idx}>{error}</ul>)}</label>
+              </div>
                 <div className="login-footer-parent">
                   <div className='login-footer-text'>
                       By signing up, you agree to our Terms, Data Policy, and Cookies Policy.

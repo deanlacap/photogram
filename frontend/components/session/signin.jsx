@@ -45,9 +45,10 @@ class SignIn extends React.Component {
     // }
 
     return (
+      <>
       <div className="signinDiv">
         <div className="signin" >
-          <form className="form" onSubmit={this.handleSubmit}>
+          <form className="signInForm" onSubmit={this.handleSubmit}>
             <div className="name"><h2>Photogram</h2></div>
             <div className="inputField">
               <input
@@ -63,21 +64,26 @@ class SignIn extends React.Component {
                 onChange={this.update('password')}
               />
             </div>
-              <input className="submitButton" type="submit" value="Log in" />
-            <div id='text'><h3>OR</h3></div>
+            <div className="signInButtonParent">
+              <input className="signInSubmitButton" type="submit" value="Log in" />
+            </div>
+            <div className='sign-in-or-text'>OR</div>
             <button className="signInDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
-            <label className="errors">{this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}</label>
+            <label className="errors">{this.props.errors.map((error, idx) => <ul key={idx}>{error}</ul>)}</label>
           </form>
         </div >
         <div>
-          <div className="noAccount">
-            <label className='account'>Don't have an account?</label>
-            <Link to={`/signup`}>
-              <input className="redirect" type="submit" value="Sign up" />
-            </Link>
-          </div>
         </div>
       </div>
+      <div className="noAccountDiv">
+        <div className="noAccount">
+          <label className='account'>Don't have an account?</label>
+          <Link to={`/signup`}>
+            <input className="redirect" type="submit" value="Sign up" />
+          </Link>
+        </div>
+      </div>
+      </>
     )
   }
 
