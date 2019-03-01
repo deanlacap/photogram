@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   root to: 'static_pages#root'
+
+  match "*path", to: redirect('/login'), via: :all
 end
