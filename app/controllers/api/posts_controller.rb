@@ -1,25 +1,28 @@
 class Api::PostsController < ApplicationController
 
-def index 
-  @posts = Post.all 
-  # render "api/posts/show"
-end 
+# def index 
+#   @posts = Post.all 
+#   # render "api/posts/show"
+# end 
 
 def show 
   @post = Post.find(params[:id])
 
-  if post
-    render "api/user/show"
-  else
-    render json: ["please include a photo in your post"], status: 422
-  end
-end 
+  render "api/posts/#{@post.id}"
+end
 
 def create 
   @post = Post.new(post_params)
+  @post.user_id = current_user.id
+  
+  if @post.save 
+    render "api/user/show"
+  else 
+    render json: @post.errors.full_messages, status: 422
+  end 
 end 
 
-
+def 
 
 private 
 
