@@ -4,7 +4,7 @@ export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
-const receiveAllPosts = () => {
+const receiveAllPosts = (posts) => {
   return ({
     type: RECEIVE_ALL_POSTS,
     posts: posts
@@ -25,13 +25,13 @@ const removePost = (id) => {
   });
 };
 
-export const allPosts = () => (dispatch) => {
-  return PostApiUtil.allPosts()
+export const fetchAllPosts = () => (dispatch) => {
+  return PostApiUtil.fetchAllPosts()
     .then( (posts) => dispatch(receiveAllPosts(posts)) );
 };
 
-export const showPost = (id) => (dispatch) => {
-  return PostApiUtil.showPost(id)
+export const fetchPost = (id) => (dispatch) => {
+  return PostApiUtil.fetchPost(id)
     .then( (post) => dispatch(receivePost(post)) );
 };
 

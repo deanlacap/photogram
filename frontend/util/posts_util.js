@@ -6,14 +6,14 @@ export const createPost = (post) => {
   });
 };
 
-export const allPosts = () => {
+export const fetchAllPosts = () => {
   return $.ajax({
     method: `get`,
     url: `/api/posts`,
   });
 };
 
-export const showPost = (id) => {
+export const fetchPost = (id) => {
   return $.ajax({
     method: `get`,
     url: `/api/posts/${id}`,

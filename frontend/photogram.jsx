@@ -4,7 +4,7 @@ import * as SessionApi from './util/session_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { deleteSession} from './util/session_util';
-import * as PostUtil from './util/posts_util';
+import * as PostActions from './actions/posts_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.getState = store.getState;
-  window.PostUtil = PostUtil;
+  window.PostActions = PostActions;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={store} />, root);
 });
