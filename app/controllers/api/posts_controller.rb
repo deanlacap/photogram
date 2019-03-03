@@ -3,9 +3,10 @@ class Api::PostsController < ApplicationController
 # before_action :require_login 
 
 def index 
-  @user = current_user 
-  @posts = @user.posts
-  # testing with own posts, not actualy feed with follow's posts 
+  # @user = current_user 
+  # @posts = @user.posts
+  # testing with all posts, not actualy feed with follow's posts 
+  @posts = Post.all
 
   render "api/posts/user_index"
 end 
@@ -31,7 +32,7 @@ def update
   @post = Post.find(params[:id])
 
   if @post.update_attributes(post_params) 
-    render "api/posts/user_index"
+    render "api/posts/show"
   else 
     render json: @post.errors.full_messages, status: 422
   end 
@@ -40,7 +41,7 @@ end
 def destroy 
   @post = Post.find(params[:id])
   @post.destroy 
-  render :index 
+  # render :index 
 end 
 
 private 

@@ -1,0 +1,51 @@
+import * as PostApiUtil from '../util/posts_util';
+
+export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
+export const RECEIVE_POST = "RECEIVE_POST";
+export const REMOVE_POST = "REMOVE_POST";
+
+const receiveAllPosts = () => {
+  return ({
+    type: RECEIVE_ALL_POSTS,
+    posts: posts
+  });
+};
+
+const receivePost = (post) => {
+  return ({
+    type: RECEIVE_POST,
+    post: post
+  });
+};
+
+const removePost = (id) => {
+  return ({
+    type: REMOVE_POST,
+    id: id
+  });
+};
+
+export const allPosts = () => (dispatch) => {
+  return PostApiUtil.allPosts()
+    .then( (posts) => dispatch(receiveAllPosts(posts)) );
+};
+
+export const showPost = (id) => (dispatch) => {
+  return PostApiUtil.showPost(id)
+    .then( (post) => dispatch(receivePost(post)) );
+};
+
+export const createPost = (post) => (dispatch) => {
+  return PostApiUtil.createPost(post)
+    .then( (post) => dispatch(receivePost(post)) );
+};
+
+export const editPost = (post) => (dispatch) => {
+  return PostApiUtil.editPost(post) 
+    .then( (post) => dispatch(receivePost(post)) );
+};
+
+export const deletePost = (id) => (dispatch) => {
+  return PostApiUtil.deletePost(id) 
+    .then( () => dispatch(removePost(id)) );
+};
