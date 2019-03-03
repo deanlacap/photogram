@@ -1,33 +1,52 @@
 class Api::PostsController < ApplicationController
 
-# def index 
-#   @posts = Post.all 
-#   # render "api/posts/show"
-# end 
+# before_action :require_login 
+
+def index 
+  @user = current_user 
+  @posts = @user.posts
+  # testing with own posts, not actualy feed with follow's posts 
+
+  render "api/posts/user_index"
+end 
 
 def show 
   @post = Post.find(params[:id])
 
-  render "api/posts/#{@post.id}"
+  render :show
 end
 
 def create 
   @post = Post.new(post_params)
-  @post.user_id = current_user.id
+  # @post.user_id = current_user.id
   
   if @post.save 
-    render "api/user/show"
+    render "api/posts/show"
   else 
     render json: @post.errors.full_messages, status: 422
   end 
 end 
 
-def 
+def update 
+  @post = Post.find(params[:id])
+
+  if @post.update_attributes(post_params) 
+    render "api/posts/user_index"
+  else 
+    render json: @post.errors.full_messages, status: 422
+  end 
+end
+
+def destroy 
+  @post = Post.find(params[:id])
+  @post.destroy 
+  render :index 
+end 
 
 private 
 
 def post_params 
-  params.require(:post).permit(:caption);
+  params.require(:post).permit(:caption, :user_id);
 end 
 
 end

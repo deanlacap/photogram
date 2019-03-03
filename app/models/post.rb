@@ -9,4 +9,6 @@ class Post < ApplicationRecord
 
   has_one_attached :photo
 
+  # look up dependencies to be able to delete all associated comments and likes
+
 end 
