@@ -331,9 +331,14 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .bottomLinksParent {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-around;
   width: 100%;
   position: absolute;
   bottom: 40px;
+  // align-items: flex-end;
+  align-self: flex-end;
 }
 
 .bottomLinks {

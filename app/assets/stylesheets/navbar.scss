@@ -1,4 +1,65 @@
-.navbar {
-  display: flex 
-  
+.navBar {
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid #f0f0f0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.fa-instagram {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+
+.navBarLinkToHome {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Cookie', cursive;
+  font-size: 25px;
+}
+
+.logo-separator {
+  width: 1px;
+  background-color: black;
+  height: 35px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
+}
+.logo-name {
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Cookie', cursive;
+  font-size: 30px;
+}
+
+.logo:active {
+  color: #999999;
+}
+
+.rightSideNav {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Cookie', cursive;
+  font-size: 25px;
+}
+
+.fa-sign-out-alt {
+  margin-right: 20px;
+}
+
+.fa-user {
+  margin-right: 20px;
 }

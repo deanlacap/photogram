@@ -15,11 +15,17 @@ class NavBar extends React.Component {
 
   render () {
     return (
-      <div className="navbar">
-        <div className="logoutButton">
-          <Link to={`/login`}>
-            <input onClick={() => this.props.logout()} type="submit" value="Logout" />
+      <div className="navBar">
+        <div className="navBarLinkToHome">
+          <Link to={`/home`} ><i className="fab fa-instagram"></i></Link>
+          <Link to={`/home`}><div className="logo-separator"></div></Link>
+          <Link to="/home"><p className="logo-name">Photogram</p></Link>
+        </div>
+        <div className="rightSideNav">
+          <Link to={`/login`} onClick={() => this.props.logout()}>
+            <i className="fas fa-sign-out-alt"></i>
           </Link>
+          <Link to={`/home`}><i className="far fa-user"></i></Link>
         </div>
       </div>
     )
