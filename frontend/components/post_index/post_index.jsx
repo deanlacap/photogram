@@ -12,13 +12,14 @@ class PostIndex extends React.Component {
   }
 
   render () {
-    let posts = this.props.posts.filter( (post) => {
+    let posts = Object.values(this.props.posts.filter( (post) => {
       if (post.photoUrl) return post;
-    });
+    }));
 
     return (
       <>
         <ul><NavBarContainer /></ul>
+        {/* {posts.map ((post) => <ul><img src={post.photoUrl} /></ul> } */}
         {console.log(posts)}
       </>
     )
