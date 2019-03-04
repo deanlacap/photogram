@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
-import Post from './post';
+import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
 
@@ -15,7 +15,7 @@ class PostIndex extends React.Component {
   render () {
     let posts = Object.values(this.props.posts.filter( (post) => {
       if (post.photoUrl) return post;
-    })).map((post) => <ul key={post.id}><Post post={post} userName={post.userName}/></ul> );
+    })).map((post) => <ul key={post.id}><PostIndexItem post={post} userName={post.userName}/></ul> );
 
     return (
       <>

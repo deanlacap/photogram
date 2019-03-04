@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render () {
     return (
@@ -17,7 +17,7 @@ class NavBar extends React.Component {
         </div>
         <div className="rightSideNav">
           <Link to={`/home`}><i className="far fa-user"></i></Link>
-          <Link to={`/login`} onClick={() => this.props.logout()}>
+          <Link to={`/login`} onClick={this.props.logout}>
             <i className="fas fa-sign-out-alt"></i>
           </Link>
         </div>

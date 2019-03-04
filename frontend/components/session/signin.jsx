@@ -9,6 +9,8 @@ class SignIn extends React.Component {
       username: "",
       password: ""
     };
+    this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update (field) {
@@ -17,8 +19,23 @@ class SignIn extends React.Component {
     };
   }
 
+  handleDemoUser(event) {
+    event.preventDefault();
+    let user = { username: "dean", password: "password" };
+    this.props.login(user);
+  }
+
   componentWillUnmount () {
     this.props.clearErrors();
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    // if (errorLength > 0) {
+
+    // }
+    this.props.login(this.state); //maybe chain a way to go straight to profile home page
   }
 
   render() {
@@ -29,7 +46,7 @@ class SignIn extends React.Component {
       <>
       <div className="signinDiv">
         <div className="signin" >
-          <form className="signInForm" onSubmit={() => this.props.login(this.state)}>
+          <form className="signInForm" onSubmit={this.handleSubmit}>
             <div className="name"><h2>Photogram</h2></div>
             <div className="inputField">
               <input
@@ -49,7 +66,7 @@ class SignIn extends React.Component {
               <input className="signInSubmitButton" type="submit" value="Log in" />
             </div>
             <div className='sign-in-or-text'>OR</div>
-            <button className="signInDemoButton" onClick={() => this.props.login(user)} >Demo Log in</button> 
+            <button className="signInDemoButton" onClick={this.handleDemoUser} >Demo Log in</button> 
             <label className="errors">{this.props.errors.map((error, idx) => <ul key={idx}>{error}</ul>)}</label>
           </form>
         </div >
