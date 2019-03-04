@@ -22,6 +22,7 @@ class SignIn extends React.Component {
   }
 
   render() {
+    // debugger
     let user = { username: "dean", password: "password" };
 
     return (

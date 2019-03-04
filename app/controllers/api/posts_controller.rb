@@ -20,6 +20,7 @@ end
 def create 
   @post = Post.new(post_params)
   # @post.user_id = current_user.id
+  # @username = User.find_by(id: Post.user_id).username;
   
   if @post.save 
     render "api/posts/show"
