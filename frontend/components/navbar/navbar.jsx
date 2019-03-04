@@ -5,13 +5,7 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   this.props.logout(); // .then(() => this.props.history.push('/login'));
-  // }
 
   render () {
     return (
@@ -22,10 +16,10 @@ class NavBar extends React.Component {
           <Link to="/home"><p className="logo-name">Photogram</p></Link>
         </div>
         <div className="rightSideNav">
+          <Link to={`/home`}><i className="far fa-user"></i></Link>
           <Link to={`/login`} onClick={() => this.props.logout()}>
             <i className="fas fa-sign-out-alt"></i>
           </Link>
-          <Link to={`/home`}><i className="far fa-user"></i></Link>
         </div>
       </div>
     )
