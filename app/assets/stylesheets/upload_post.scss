@@ -1,0 +1,22 @@
+.pageDiv {
+  background-color: #fafafa
+}
+
+.uploadDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.preview {
+  height: 400px;
+  width:  400px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+}
+
+.preview > img {
+  height: 400px;
+  width:  400px;
+  object-fit: cover;
+}

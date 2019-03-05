@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.pageDiv {
+  background-color: #fafafa;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .signin {
   display: flex;
   background-color: white;
@@ -17,7 +26,7 @@
 }
 
 .signinDiv {
-    background-color: #fff;
+    background-color: #fafafa;
     border-radius: 1px;
     margin: 0 0 10px;
     padding: 10px 0;
@@ -64,7 +73,7 @@
 }
 
 .signupDiv {
-    background-color: #fff;
+    background-color: #fafafa;
     border-radius: 1px;
     margin: 0 0 10px;
     padding: 10px 0;
@@ -295,6 +304,7 @@ input[type=text]:focus, input[type=password]:focus {
   justify-content: center;
 }
 .haveAccount {
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,6 +319,7 @@ input[type=text]:focus, input[type=password]:focus {
 .noAccountDiv {
   display: flex;
   justify-content: center;
+  background-color: #fafafa;
 }
 
 .noAccount {
@@ -321,6 +332,7 @@ input[type=text]:focus, input[type=password]:focus {
   border-bottom: 1px solid #d9d9d9;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: white;
 }
 
 .account {
@@ -339,6 +351,7 @@ input[type=text]:focus, input[type=password]:focus {
   bottom: 40px;
   // align-items: flex-end;
   align-self: flex-end;
+  background-color: #fafafa
 }
 
 .bottomLinks {

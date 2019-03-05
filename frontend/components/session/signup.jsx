@@ -53,6 +53,7 @@ class SignUp extends React.Component {
   render () {
       return (
         <>
+        <div className="pageDiv">
         <div className="signupDiv">
           <div className='signup'>
 
@@ -157,6 +158,7 @@ class SignUp extends React.Component {
             </ul>
           </div>
         </div>
+          </div>
       </>
     )
   }

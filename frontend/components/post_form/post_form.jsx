@@ -22,7 +22,7 @@ class PostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.action(this.state); //.then(() => this.props.history.push('/'));
+    // this.props.createPost(this.state).then((post) => this.props.history.push('/${post.id}'));
     let formData = new FormData();
     // debugger 
     formData.append('post[caption]', this.state.caption);
@@ -47,41 +47,60 @@ class PostForm extends React.Component {
     }
   }
 
-
   render() {
-    return (
-      <div>
-        <div><NavBarContainer /></div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h3>Upload a Photo</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Caption:</label>
-          <label>
-            <textarea
-              onChange={this.update('caption')} />
-          </label>
-          <label>
-            <input 
-              type="file" 
-              onChange={this.handleFile}
-            />
-          </label>
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
 
-          <input type="submit" />
-        </form>
+    return (
+      <div className="pageDiv">
+        <div>
+          <div><NavBarContainer /></div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <div className="uploadDiv">
+            <h3>Upload a Photo</h3>
+            <div className="preview">
+              {preview}
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <label>Caption:</label>
+              <div className="caption">
+                <textarea
+                  placeholder="Add a caption to your photo!!"
+                  onChange={this.update('caption')} 
+                />
+              </div>
+              <div>
+                <input 
+                  type="file" 
+                  onChange={this.handleFile}
+                />
+              </div>
+
+              <input type="submit" />
+            </form>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
       </div>
-    );
+    )
   }
 }
 
