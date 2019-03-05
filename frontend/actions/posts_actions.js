@@ -47,6 +47,7 @@ export const editPost = (post) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch) => {
+  debugger 
   return PostApiUtil.deletePost(id) 
     .then( () => dispatch(removePost(id)) );
 };

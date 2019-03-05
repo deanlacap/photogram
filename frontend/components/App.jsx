@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../frontend/util/route_util';
 import PostIndexContainer from './post_index/post_index_container';
 import PostFormContainer from './post_form/post_form_container';
+import PostShowContainer from './post_show/post_show_container';
 
 const App = (props) => {
   // debugger
@@ -16,6 +17,7 @@ const App = (props) => {
       {/* <Route path="/:username" component={NavBarContainer} /> */}
       <AuthRoute path="/login" component={LogInContainer} />
       <AuthRoute path="/signup" component={SignUpContainer} />
+      <ProtectedRoute path="/post/:id" component={PostShowContainer} />
       <ProtectedRoute path="/new" component={PostFormContainer} />
       <ProtectedRoute path="/" component={PostIndexContainer} />
       <Redirect to="/login" />

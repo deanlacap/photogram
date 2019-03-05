@@ -1,5 +1,6 @@
 import React from 'react';
 // import PostContainer from './post_container';
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
 
@@ -24,7 +25,9 @@ class PostIndexItem extends React.Component {
             <ul className="postUsername"><h2>{post.username}</h2></ul>
           </div>
           <div className="image">
-            <ul><img src={`${post.photoUrl}`} /></ul>
+             <Link to={`/post/${post.id}`}>
+              <img src={`${post.photoUrl}`} />
+            </Link>
           </div>
         </div>
       </>

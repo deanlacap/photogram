@@ -21,8 +21,9 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger 
     e.preventDefault();
-    // this.props.createPost(this.state).then((post) => this.props.history.push('/${post.id}'));
+    // this.props.createPost(this.state).then((post) => this.props.history.push('/'));
     let formData = new FormData();
     // debugger 
     formData.append('post[caption]', this.state.caption);
@@ -31,7 +32,7 @@ class PostForm extends React.Component {
       formData.append('post[photo]', this.state.photoFile);
     }
 
-    this.props.createPost(formData);
+    this.props.createPost(formData).then((res) => this.props.history.push(`/post/${res.post.id}`));
   }
 
   handleFile(e) {

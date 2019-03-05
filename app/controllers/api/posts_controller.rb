@@ -18,7 +18,7 @@ def show
 end
 
 def create 
-  debugger
+  # debugger
   @post = Post.new(post_params)
   @post.user_id = current_user.id
   # @username = User.find_by(id: Post.user_id).username;
@@ -44,7 +44,7 @@ end
 def destroy 
   @post = Post.find(params[:id])
   @post.destroy 
-  # render :index 
+  # render "api/posts/user_index"
 end 
 
 private 

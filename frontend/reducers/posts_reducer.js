@@ -5,6 +5,7 @@ import {
 } from '../actions/posts_actions';
 
 const postsReducer = (oldState = {}, action) => {
+  // debugger 
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
 
@@ -17,7 +18,8 @@ const postsReducer = (oldState = {}, action) => {
 
       return newState;
     case REMOVE_POST:
-      delete newState[action.post.id];
+      debugger
+      delete newState[action.id];
 
       return newState;
   } 
