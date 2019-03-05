@@ -6,7 +6,7 @@ import { createPost } from '../../actions/posts_actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: post => dispatch(createPost(post)),
+    createPost: post => dispatch(createPost(post)),
   };
 };
 

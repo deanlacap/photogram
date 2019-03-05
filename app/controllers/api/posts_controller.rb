@@ -18,12 +18,14 @@ def show
 end
 
 def create 
+  debugger
   @post = Post.new(post_params)
   @post.user_id = current_user.id
   # @username = User.find_by(id: Post.user_id).username;
+  # @posts = Post.all
   
   if @post.save 
-    render :index 
+    render "api/posts/show"
   else 
     render json: @post.errors.full_messages, status: 422
   end 
@@ -48,7 +50,7 @@ end
 private 
 
 def post_params 
-  params.require(:post).permit(:caption, :user_id);
+  params.require(:post).permit(:caption, :user_id, :photo);
 end 
 
 end

@@ -36,6 +36,7 @@ export const fetchPost = (id) => (dispatch) => {
 };
 
 export const createPost = (post) => (dispatch) => {
+  // debugger 
   return PostApiUtil.createPost(post)
     .then( (post) => dispatch(receivePost(post)) );
 };

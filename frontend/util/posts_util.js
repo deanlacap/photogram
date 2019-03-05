@@ -1,8 +1,11 @@
 export const createPost = (post) => {
+  // debugger 
   return $.ajax({
     method: `post`,
     url: `/api/posts`,
-    data: {post: post},
+    data: post,
+    contentType: false,
+    processData: false,
   });
 };
 
