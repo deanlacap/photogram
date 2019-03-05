@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
 
-# before_action :require_login 
+before_action :require_login 
 
 def index 
   # @user = current_user 
@@ -19,11 +19,11 @@ end
 
 def create 
   @post = Post.new(post_params)
-  # @post.user_id = current_user.id
+  @post.user_id = current_user.id
   # @username = User.find_by(id: Post.user_id).username;
   
   if @post.save 
-    render "api/posts/show"
+    render :index 
   else 
     render json: @post.errors.full_messages, status: 422
   end 
