@@ -1,5 +1,5 @@
 .pageDiv {
-  background-color: #fafafa
+  background-color: #fafafa;
 }
 
 .uploadDiv {
@@ -40,5 +40,28 @@
   font-family: Roboto, sans-serif;
   font-size: 14px;
   display: flex;
-  
+}
+
+#fileUploadInput {
+  visibility: hidden;
+}
+
+.fileUploadButton {
+  width: 200px;
+  background-color: #468fdc;
+  height: 40px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.fileUploadDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // display: flex;
+  // justify-content: center;
+  display: inline-block;
+  vertical-align: middle; 
 }

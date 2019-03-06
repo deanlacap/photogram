@@ -8,7 +8,7 @@ class PostShow extends React.Component {
     // debugger 
     super (props);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
     this.state = {
       captionEdit: false
     };
@@ -19,7 +19,7 @@ class PostShow extends React.Component {
     .then (() => this.setState({ originalPostcaption: this.props.post.caption }));
   }
 
-  handleClick (e) {
+  handleEdit (e) {
     e.preventDefault();
     this.setState({captionEdit: true});
   }
@@ -52,7 +52,7 @@ class PostShow extends React.Component {
             </div>
             <div className="rightSideHeader">
             
-              <button onClick={this.handleClick}><i className="fas fa-user-edit"></i></button>
+              <button onClick={this.handleEdit}><i className="fas fa-user-edit"></i></button>
               <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
             </div>
           </div>

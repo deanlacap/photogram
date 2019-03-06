@@ -55,18 +55,6 @@ class PostForm extends React.Component {
       <div className="pageDiv">
         <div>
           <div><NavBarContainer /></div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <div className="uploadDiv">
             <h3>Upload a Photo</h3>
             <div className="preview">
@@ -81,26 +69,22 @@ class PostForm extends React.Component {
                   onChange={this.update('caption')} 
                 />
               </div>
-              <div>
-                <input 
-                  required
-                  type="file" 
-                  onChange={this.handleFile}
-                />
+              <div className="fileUploadDiv">
+                <label className="fileUploadButton" htmlFor="fileUploadInput">
+                  <h2>Choose a Photo</h2>
+                  <input 
+                    id="fileUploadInput"
+                    name="fileUploadInput"
+                    required
+                    type="file" 
+                    onChange={this.handleFile}
+                  />
+                </label>
               </div>
 
               <input type="submit" />
             </form>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
       </div>
     )
