@@ -44,3 +44,16 @@
   image-orientation: from-image;
 }
 
+.editCaption {
+  background: #ffffff;
+  width: 400px;
+  height: 100px;
+  resize: none;
+  border: 1px solid #e6e6e6;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  display: flex;
+}
+

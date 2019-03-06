@@ -9,19 +9,34 @@ class PostShow extends React.Component {
     super (props);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
     this.state = {
-      captionEdit: false
+      captionEdit: false,
+    };
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
     };
   }
 
   componentDidMount () {
     this.props.fetchPost(this.props.match.params.id)
-    .then (() => this.setState({ originalPostcaption: this.props.post.caption }));
+    .then (() => this.setState({ originalPostcaption: this.props.post.caption,
+      id: this.props.post.id,
+      caption: this.props.post.caption,
+     }));
   }
 
   handleEdit (e) {
     e.preventDefault();
     this.setState({captionEdit: true});
+  }
+
+  handleEditSubmit (e) {
+    e.preventDefault();
+    this.props.editPost(this.state).then( () => this.props.history.push('/'));
   }
 
   handleDelete () {
@@ -35,7 +50,12 @@ class PostShow extends React.Component {
 
     let caption = <div className="postCaption">{post.username}{post.caption}</div>
 
-    let blankCaption = <div className="editCaption"><textarea placeholder={this.originalPostcaption}></textarea></div>
+    let blankCaption;
+    blankCaption = <div>
+     <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.originalPostcaption} onChange={this.update('caption')} /> </div>
+    <button onClick={this.handleEditSubmit}>Submit Caption Edit</button>
+    </div>
+    
 
     return (
       <>

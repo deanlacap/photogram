@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     post: state.entities.posts[ownProps.match.params.id]
   });
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchPost: (id) => dispatch(fetchPost(id)),
@@ -15,4 +15,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
-

@@ -55,6 +55,12 @@ class PostForm extends React.Component {
       <div className="pageDiv">
         <div>
           <div><NavBarContainer /></div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <div className="uploadDiv">
             <h3>Upload a Photo</h3>
             <div className="preview">
