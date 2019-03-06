@@ -35,7 +35,7 @@ class PostShow extends React.Component {
 
     let caption = <div className="postCaption">{post.username}{post.caption}</div>
 
-    let blankCaption = <div className="editCaption"><textarea value={this.originalPostcaption}></textarea></div>
+    let blankCaption = <div className="editCaption"><textarea placeholder={this.originalPostcaption}></textarea></div>
 
     return (
       <>
@@ -60,7 +60,6 @@ class PostShow extends React.Component {
             <ul><img src={`${post.photoUrl}`} /></ul>
           </div>
           {this.state.captionEdit ? blankCaption : caption}
-          {caption}
         </div>
       </>
     );

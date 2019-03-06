@@ -276,7 +276,8 @@
   width: 100%;
 }
 
-input[type=text], input[type=password] {
+.login-username, .login-password, 
+.signup-email, .signup-fullName, .signup-username, .signup-password {
   background-color: #fafafa;
   border: 0px;
   // border-color: #d5d4d6;
@@ -287,7 +288,8 @@ input[type=text], input[type=password] {
   border-radius: 3px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.login-username:focus, .login-password:focus,
+.signup-email:focus, .signup-fullName:focus, .signup-username:focus, .signup-password:focus  {
   border: 1px solid #d5d4d6;
   outline: none;
 }

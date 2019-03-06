@@ -73,15 +73,17 @@ class PostForm extends React.Component {
               {preview}
             </div>
             <form onSubmit={this.handleSubmit}>
-              <label>Caption:</label>
               <div className="caption">
-                <textarea
+                <textarea 
+                  wrap="hard"
+                  className="upload-caption"
                   placeholder="Add a caption to your photo!!"
                   onChange={this.update('caption')} 
                 />
               </div>
               <div>
                 <input 
+                  required
                   type="file" 
                   onChange={this.handleFile}
                 />

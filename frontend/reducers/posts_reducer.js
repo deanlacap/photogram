@@ -5,7 +5,6 @@ import {
 } from '../actions/posts_actions';
 
 const postsReducer = (oldState = {}, action) => {
-  // debugger 
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
 
@@ -13,12 +12,10 @@ const postsReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_POSTS:
       return action.posts;
     case RECEIVE_POST:
-    // debugger
       newState[action.post.id] = action.post;
 
       return newState;
     case REMOVE_POST:
-      debugger
       delete newState[action.id];
 
       return newState;

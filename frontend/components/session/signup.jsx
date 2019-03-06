@@ -68,6 +68,7 @@ class SignUp extends React.Component {
                 <div className='or-text'>OR</div>
                 <div className="inputField">
                   <input 
+                    className="signup-email"
                     type="text"
                     placeholder="Email"
                     onChange={this.update('email')}
@@ -75,6 +76,7 @@ class SignUp extends React.Component {
                 </div>
                 <div className="inputField">
                   <input 
+                    className="signup-fullName"
                     type="text"
                     placeholder="Full Name"
                     onChange={this.update('name')}
@@ -82,6 +84,7 @@ class SignUp extends React.Component {
                 </div>
                 <div className="inputField">
                   <input 
+                    className="signup-username"
                     type="text"
                     placeholder="Username"
                     onChange={this.update('username')}
@@ -89,6 +92,7 @@ class SignUp extends React.Component {
                 </div>
                 <div className="inputField">
                   <input 
+                    className="signup-password"
                     type="password"
                     placeholder="Password"
                     onChange={this.update('password')}

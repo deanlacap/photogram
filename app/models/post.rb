@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   
   def ensure_photo
     unless self.photo.attached? 
-      errors[:photo] << "must be attached"
+      errors[:photo] << "please add an image to your post"
     end 
   end 
 

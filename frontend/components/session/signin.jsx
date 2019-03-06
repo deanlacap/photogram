@@ -51,6 +51,7 @@ class SignIn extends React.Component {
                 <div className="name"><h2>Photogram</h2></div>
                 <div className="inputField">
                   <input
+                    className="login-username"
                     type="text"
                     placeholder="Username"
                     onChange={this.update('username')}
@@ -58,6 +59,7 @@ class SignIn extends React.Component {
                 </div>
                 <div className="inputField">
                   <input
+                  className="login-password"
                     type="password"
                     placeholder="Password"
                     onChange={this.update('password')}

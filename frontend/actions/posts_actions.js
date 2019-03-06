@@ -36,7 +36,6 @@ export const fetchPost = (id) => (dispatch) => {
 };
 
 export const createPost = (post) => (dispatch) => {
-  // debugger 
   return PostApiUtil.createPost(post)
     .then( (post) => dispatch(receivePost(post)) );
 };
@@ -47,7 +46,6 @@ export const editPost = (post) => (dispatch) => {
 };
 
 export const deletePost = (id) => (dispatch) => {
-  debugger 
   return PostApiUtil.deletePost(id) 
     .then( () => dispatch(removePost(id)) );
 };

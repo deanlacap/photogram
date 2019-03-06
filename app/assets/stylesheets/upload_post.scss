@@ -19,4 +19,26 @@
   height: 400px;
   width:  400px;
   object-fit: cover;
+  image-orientation: from-image;
+}
+
+.newPostHeader {
+  width: 400px;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.upload-caption {
+  background: #ffffff;
+  width: 400px;
+  height: 100px;
+  resize: none;
+  border: 1px solid #e6e6e6;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  display: flex;
+  
 }
