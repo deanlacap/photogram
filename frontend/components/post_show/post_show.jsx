@@ -5,18 +5,24 @@ import NavBarContainer from '../navbar/navbar_container';
 class PostShow extends React.Component {
 
   constructor (props) {
+    // debugger 
     super (props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      captionEdit: false
+    };
   }
 
   componentDidMount () {
-    this.props.fetchPost(this.props.match.params.id);
-    // debugger
+    this.props.fetchPost(this.props.match.params.id)
+    .then (() => this.setState({ originalPostcaption: this.props.post.caption }));
   }
 
-  // handleClick (e) {
-    // logic for navigating to edit page 
-  // }
+  handleClick (e) {
+    e.preventDefault();
+    this.setState({captionEdit: true});
+  }
 
   handleDelete () {
     this.props.deletePost(this.props.post.id).then( () => this.props.history.push('/'));
@@ -24,7 +30,12 @@ class PostShow extends React.Component {
 
   render() {
     let post = this.props.post;
+    // debugger 
     if (!post) return <div>loading....</div>
+
+    let caption = <div className="postCaption">{post.username}{post.caption}</div>
+
+    let blankCaption = <div className="editCaption"><textarea value={this.originalPostcaption}></textarea></div>
 
     return (
       <>
@@ -40,13 +51,16 @@ class PostShow extends React.Component {
               <ul className="postUsername"><h2>{post.username}</h2></ul>
             </div>
             <div className="rightSideHeader">
-              <button onClick={() => this.handleclick()}><i className="fas fa-user-edit"></i></button>
+            
+              <button onClick={this.handleClick}><i className="fas fa-user-edit"></i></button>
               <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
             </div>
           </div>
           <div className="image">
             <ul><img src={`${post.photoUrl}`} /></ul>
           </div>
+          {this.state.captionEdit ? blankCaption : caption}
+          {caption}
         </div>
       </>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 // import PostContainer from './post_container';
 import { Link } from 'react-router-dom';
+import PostCaption from '../comment/comment';
 
 class PostIndexItem extends React.Component {
 
@@ -28,6 +29,9 @@ class PostIndexItem extends React.Component {
              <Link to={`/post/${post.id}`}>
               <img src={`${post.photoUrl}`} />
             </Link>
+          </div>
+          <div className="postCaption">
+            {post.username}{post.caption}
           </div>
         </div>
       </>
