@@ -48,11 +48,10 @@ class PostShow extends React.Component {
     // debugger 
     if (!post) return <div>loading....</div>
 
-    let caption = <div className="postCaption">{post.username}{post.caption}</div>
+    let caption = <div className="postCaption">{`@${post.username} abc `}{post.caption}</div>
 
-    let blankCaption;
-    blankCaption = <div>
-     <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.originalPostcaption} onChange={this.update('caption')} /> </div>
+    let blankCaption = <div>
+     <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.state.originalPostcaption} onChange={this.update('caption')} /> </div>
     <button onClick={this.handleEditSubmit}>Submit Caption Edit</button>
     </div>
     
@@ -68,7 +67,7 @@ class PostShow extends React.Component {
           <div className="postHeader">
             {/* {console.log(post.username)} */}
             <div className="leftSideHeader">
-              <ul className="postUsername"><h2>{post.username}</h2></ul>
+              <ul className="postUsername"><h2>{`@${post.username}`}</h2></ul>
             </div>
             <div className="rightSideHeader">
             

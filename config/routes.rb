@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:index, :create, :update, :destroy, :show]
+    resources :post_likes, only: [:create, :destroy]
   end
   # resources :posts, only: :show 
 
@@ -12,3 +13,4 @@ Rails.application.routes.draw do
 
   # match "*path", to: redirect('/login'), via: :all
 end
+ 

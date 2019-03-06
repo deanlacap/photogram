@@ -1,7 +1,7 @@
 class PostLike < ApplicationRecord
 
   validates :liker_id, :post_id, presence: true
-  validates :liker_id, uniqueness: {scope: :post_id}
+  validates :post_id, uniqueness: {scope: :liker_id}
 
   belongs_to :user,
     primary_key: :id,

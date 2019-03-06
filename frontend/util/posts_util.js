@@ -28,8 +28,8 @@ export const editPost = (post) => {
     url: `/api/posts/${post.id}`,
     data: {post: post},
   });
-}
-;
+};
+
 export const deletePost = (id) => {
   return $.ajax({
     method: `delete`,
