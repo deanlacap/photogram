@@ -20,3 +20,11 @@ export const deleteSession = () => {
     method: 'delete',
   });
 };
+
+export const patchUser = (user) => {
+  return $.ajax({
+    url: `/api/users${user.id}`,
+    method: 'patch',
+    data: { user: user },
+  });
+};

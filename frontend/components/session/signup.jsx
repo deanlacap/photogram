@@ -122,46 +122,44 @@ class SignUp extends React.Component {
             </Link>
           </div>
         </div>
-        <div className="bottomLinksParent">
-          <div className="bottomLinks">
-            <ul>
-              ABOUT US
+            <div className="bottomLinksParent">
+              <ul>
+                ABOUT US
             </ul>
-            <ul>
-              SUPPORT
+              <ul>
+                SUPPORT
             </ul>
-            <ul>
-              PRESS
+              <ul>
+                PRESS
             </ul>
-            <ul>
-              API
+              <ul>
+                API
             </ul>
-            <ul>
-              JOBS
+              <ul>
+                JOBS
             </ul>
-            <ul>
-              PRIVACY
+              <ul>
+                PRIVACY
             </ul>
-            <ul>
-              TERMS
+              <ul>
+                TERMS
             </ul>
-            <ul>
-              DIRECTORY
+              <ul>
+                DIRECTORY
             </ul>
-            <ul>
-              PROFILES
+              <ul>
+                PROFILES
             </ul>
-            <ul>
-              HASHTAGS 
+              <ul>
+                HASHTAGS
             </ul>
-            <ul>
-              LANGUAGE
+              <ul>
+                LANGUAGE
             </ul>
-            <ul>
-              © 2019 PHOTOGRAM
+              <ul>
+                © 2019 PHOTOGRAM
             </ul>
-          </div>
-        </div>
+            </div>
           </div>
       </>
     )

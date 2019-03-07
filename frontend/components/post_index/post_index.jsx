@@ -5,6 +5,7 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
 
   constructor (props) {
+    // debugger 
     super (props);
   }
 
@@ -27,6 +28,7 @@ class PostIndex extends React.Component {
 
   render () {
     let posts = Object.values(this.props.posts.filter( (post) => {
+      // debugger 
       if (post.photoUrl) return post;
     })).map((post) => <ul key={post.id}><PostIndexItem post={post} /></ul> ).reverse();
 

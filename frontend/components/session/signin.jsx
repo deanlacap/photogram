@@ -84,9 +84,7 @@ class SignIn extends React.Component {
               </Link>
             </div>
           </div >
-          <div className="bottomLinksParentDiv">
             <div className="bottomLinksParent">
-              <div className="bottomLinks">
                 <ul>
                   ABOUT US
                 </ul>
@@ -123,8 +121,6 @@ class SignIn extends React.Component {
                 <ul>
                   © 2019 PHOTOGRAM
                 </ul>
-              </div>
-            </div>
           </div>
           </div>
         

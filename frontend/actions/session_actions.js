@@ -1,4 +1,5 @@
 import * as SessionApiUtil from '../util/session_util';
+// import { Session } from 'inspector';
 
 // export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -37,6 +38,14 @@ export const createNewUser = (userForm) => (dispatch) => {
   return SessionApiUtil.postUser(userForm) 
     .then( 
       user => dispatch(receiveCurrentUser(user)), 
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    );
+};
+
+export const editUser = (userForm) => (dispatch) => {
+  return SessionApiUtil.editUser(userForm)
+    .then(
+      user => dispatch(receiveCurrentUser(user)),
       errors => dispatch(receiveErrors(errors.responseJSON))
     );
 };

@@ -8,6 +8,7 @@ import PostIndexContainer from './post_index/post_index_container';
 import PostFormContainer from './post_form/post_form_container';
 import PostShowContainer from './post_show/post_show_container';
 import EditPostContainer from './post_edit_form/post_edit_form_container';
+import UserFeedContainer from './user_feed/user_feed_container';
 
 const App = (props) => {
   // debugger
@@ -21,7 +22,7 @@ const App = (props) => {
       <ProtectedRoute path="/post/:id" component={PostShowContainer} />
       {/* <ProtectedRoute path="/edit/:id" component={EditPostContainer} /> */}
       <ProtectedRoute path="/new" component={PostFormContainer} />
-      <ProtectedRoute path="/" component={PostIndexContainer} />
+      <ProtectedRoute path="/" component={UserFeedContainer} />
       <Redirect to="/login" />
     </Switch>
   </div>

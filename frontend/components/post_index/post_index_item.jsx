@@ -5,7 +5,7 @@ import PostCaption from '../comment/comment';
 
 class PostIndexItem extends React.Component {
 
-  constructor (props) {
+  constructor (props) { 
     super(props);
     this.state = {
       heartStatus: false,
@@ -33,6 +33,7 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
+    console.log(this.props.post);
     let post = this.props.post;
     // let count = Object.values(post.likes);
     let username = <b>{post.username}</b> 
@@ -40,49 +41,39 @@ class PostIndexItem extends React.Component {
     if (this.state.heartStatus === true) {
       heart = 
       <div>
-      <div>
-      <div className="redHeart"><i className="fas fa-heart"></i></div>
+        <div className="redHeart"><i className="fas fa-heart"></i></div>
+        <div><h2 className="likeText"><b>1 like</b></h2></div>
       </div>
-      <div>
-        <h2 className="likeText"><b>1 like</b></h2>
-      </div>
-        </div>
     } else {
       heart = <div className="blackHeart"><i className="far fa-heart"></i></div>
     }
     
     return (
       <>
-      {/* <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/> */}
         <div className="postBox">
-          <div className="postHeader">
-            {/* {console.log(post.username)} */}
-            <ul className="postUsername"><h2>{username}</h2></ul>
-          </div>
-          <div className="image">
-             <Link to={`/post/${post.id}`}>
-              <img src={`${post.photoUrl}`} />
-            </Link>
-          </div>
-          <div className="captionBox">
-            <div className="heartCommentSection">
-              <div><button onClick={this.handleHeart} className="heartLike">{heart}</button></div>
-              <div><button><i class="far fa-comment"></i></button></div>
-            </div>
-            <div className="postCaption">
-              <div className="captionText">{username}</div>
-              <div>{post.caption}</div>
-            </div>
-          </div>
-        </div>
+  <div className="postHeader">
+    <ul className="postUsername"><h2>{username}</h2></ul>
+  </div>
+  <div className="image">
+    <Link to={`/post/${post.id}`}>
+      <img src={`${post.photoUrl}`} />
+    </Link>
+  </div>
+  <div className="captionBox">
+    <div className="heartCommentSection">
+      <div><button onClick={this.handleHeart} className="heartLike">{heart}</button></div>
+      <div><button><i className="far fa-comment"></i></button></div>
+    </div>
+    <div className="postCaption">
+      <div className="captionText">{username}</div>
+      <div>{post.caption}</div>
+    </div>
+  </div>
+</div>
       </>
     );
   }
 }
 
 export default PostIndexItem;
+
