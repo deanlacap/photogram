@@ -10,6 +10,19 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllPosts();
+    this.props.fetchAllPostLikes();
+  }
+
+  countLikes(like_array, post) {
+    let count = 0; 
+
+    for (let i = 0; i < post_array.length; i++) {
+      let like = like_array[i];
+
+      if (like.post_id === post.id) count ++;
+    }
+
+    return count;
   }
 
   render () {

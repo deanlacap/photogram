@@ -9,8 +9,19 @@ class PostIndexItem extends React.Component {
   //   this.props.fetchPost(this.props.match.params.postId);
   // }
 
+  // count (array) {
+  //   let sum = 0;
+
+  //   for (let i = 0; i < array.length; i++) {
+  //     sum ++;
+  //   }
+
+  //   return sum;
+  // }
+
   render() {
     let post = this.props.post;
+    // let count = Object.values(post.likes);
 
     return (
       <>

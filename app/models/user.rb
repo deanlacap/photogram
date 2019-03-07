@@ -8,11 +8,13 @@ class User < ApplicationRecord
   attr_reader :password 
 
   has_many :posts,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Post
 
   has_many :likes,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :liker_id,
     class_name: :PostLike 

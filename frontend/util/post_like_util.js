@@ -12,3 +12,10 @@ export const deletePostLike = (id) => {
     type: 'delete',
   });
 };
+
+export const fetchAllPostLikes = () => {
+  return $.ajax({
+    url: `/api/post_likes`,
+    method: `get`,
+  });
+};
