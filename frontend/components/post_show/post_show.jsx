@@ -48,7 +48,12 @@ class PostShow extends React.Component {
     // debugger 
     if (!post) return <div>loading....</div>
 
-    let caption = <div className="postCaption">{`@${post.username} abc `}{post.caption}</div>
+    let caption = <div className="captionBox">
+                    <div className="postCaption">
+                      <div className="captionText"><b>{post.username}</b></div>
+                      <div className="">{post.caption}</div>
+                    </div>
+                  </div>
 
     let blankCaption = <div>
      <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.state.originalPostcaption} onChange={this.update('caption')} /> </div>
@@ -67,7 +72,7 @@ class PostShow extends React.Component {
           <div className="postHeader">
             {/* {console.log(post.username)} */}
             <div className="leftSideHeader">
-              <ul className="postUsername"><h2>{`@${post.username}`}</h2></ul>
+              <ul className="postUsername"><h2><b>{post.username}</b></h2></ul>
             </div>
             <div className="rightSideHeader">
             

@@ -36,6 +36,7 @@
   width: 75%;
   position: relative;
   top: 50px;
+  background-color: #fafafa;
 }
 
 .image {
@@ -57,3 +58,51 @@
   display: flex;
 }
 
+.captionBox {
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  // align-items: center;
+  border-radius: 3px 3px 0px 0px;
+  display: flex;
+  // justify-content: space-between;
+  flex-direction: column;
+}
+
+.heartCommentSection {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  // font-size-adjust: 12px;
+}
+
+.captionText {
+  margin-right: 10px;
+}
+
+.postCaption {
+  display: flex;
+  flex-direction: flex-start;
+  // align-items: center;
+}
+
+.redHeart {
+  color: red;
+  // size: 14px;
+}
+
+.blackHeart {
+  color: black;
+}
+
+.heartLike {
+  margin-right: 10px;
+}
+
+.likeText {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

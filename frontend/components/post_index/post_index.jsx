@@ -10,7 +10,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllPosts();
-    this.props.fetchAllPostLikes();
+    // this.props.fetchAllPostLikes();
   }
 
   countLikes(like_array, post) {
@@ -31,10 +31,10 @@ class PostIndex extends React.Component {
     })).map((post) => <ul key={post.id}><PostIndexItem post={post} /></ul> ).reverse();
 
     return (
-      <>
+      <div className="indexPage">
         <ul><NavBarContainer /></ul>
         <div>{posts}</div>
-      </>
+      </div>
     )
   }
 }

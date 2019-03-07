@@ -26,16 +26,16 @@ const removeLike = (id) => {
 };
 
 export const createPostLike = (like) => (dispatch) => {
-  PostLikeApiUtil.createPostLike(like) 
+  return PostLikeApiUtil.createPostLike(like) 
     .then( (like) => dispatch(receiveLike(like)) );
 };
 
 export const deletePostLike = (id) => (dispatch) => {
-  PostLikeApiUtil.deletePostLike(id)
+  return PostLikeApiUtil.deletePostLike(id)
     .then( (id) => dispatch(removeLike(id)) );
 };
 
 export const fetchAllPostLikes = () => (dispatch) => {
-  PostLikeApiUtil.fetchAllPostLikes()
+  return PostLikeApiUtil.fetchAllPostLikes()
     .then( (likes) => dispatch(receiveAllLikes(likes)) );
-}
+};
