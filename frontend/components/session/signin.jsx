@@ -21,7 +21,7 @@ class SignIn extends React.Component {
 
   handleDemoUser(event) {
     event.preventDefault();
-    let user = { username: "dean", password: "password" };
+    let user = { username: "demo", password: "password" };
     this.props.login(user);
   }
 
