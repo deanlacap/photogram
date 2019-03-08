@@ -75,20 +75,26 @@ class PostForm extends React.Component {
                   onChange={this.update('caption')} 
                 />
               </div>
-              <div className="fileUploadDiv">
-                <label className="fileUploadButton" htmlFor="fileUploadInput">
-                  <h2>Choose a Photo</h2>
-                  <input 
-                    id="fileUploadInput"
-                    name="fileUploadInput"
-                    required
-                    type="file" 
-                    onChange={this.handleFile}
-                  />
-                </label>
-              </div>
+              <br/>
+              <div className="fileUploadDivParent">
+                <div className="fileUploadDiv">
+                  <label className="fileUploadButton" htmlFor="fileUploadInput">
+                    <h2 className="fileUploadText">Choose a Photo</h2>
+                    <input 
+                      id="fileUploadInput"
+                      name="fileUploadInput"
+                      required
+                      type="file" 
+                      onChange={this.handleFile}
+                    />
+                  </label>
+                </div>
 
-              <input type="submit" />
+              </div>
+              <br/>
+              <div className="submitUploadButtonParent">
+                <input className="submitUploadButton" type="submit" />
+              </div>
             </form>
           </div>
         </div>
