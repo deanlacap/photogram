@@ -17,7 +17,7 @@ class NavBar extends React.Component {
         </div>
         <div className="rightSideNav">
           <Link to={`/new`}><i className="fas fa-cloud-upload-alt"></i></Link>
-          <Link to={`/`}><i className="far fa-user"></i></Link>
+          <Link to={`/profile`}><i className="far fa-user"></i></Link>
           <Link to={`/login`} onClick={this.props.logout}>
             <i className="fas fa-sign-out-alt"></i>
           </Link>

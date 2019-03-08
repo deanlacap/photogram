@@ -22,7 +22,8 @@ const App = (props) => {
       <ProtectedRoute path="/post/:id" component={PostShowContainer} />
       {/* <ProtectedRoute path="/edit/:id" component={EditPostContainer} /> */}
       <ProtectedRoute path="/new" component={PostFormContainer} />
-      <ProtectedRoute path="/" component={UserFeedContainer} />
+      <ProtectedRoute path="/profile" component={UserFeedContainer} />
+      <ProtectedRoute path="/" component={PostIndexContainer} />
       <Redirect to="/login" />
     </Switch>
   </div>
