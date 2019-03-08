@@ -7,8 +7,111 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ActiveRecord::Base.transaction do
-  
- User.destroy_all
- user1 = User.create!(username: "demo", email: "demo@email.com", password: "password")
+  # Users
+  User.destroy_all
+  user1 = User.create!(username: "slackHQ", email: "info@slack.com", password: "password")
+  user2 = User.create!(username: "beachBum", email: "greg@appacademy.io", password: "password")
+  user3 = User.create!(username: "chelsea", email: "chelsea@appacademy.io", password: "password")
+  user4 = User.create!(username: "Subway", email: "crew@subway.com", password: "password")
+  user5 = User.create!(username: "margaret", email: "margaret@appacademy.io", password: "password")
+  user6 = User.create!(username: "sally", email: "sally@appacademy.io", password: "password")
+  user7 = User.create!(username: "demo", email: "demo@appacademy.io", password: "password")
+  user8 = User.create!(username: "SoulCycle", email: "info@soulcycle.com", password: "password")
+  user9 = User.create!(username: "rupert", email: "rupert@appacademy.io", password: "password")
+
+  # Photos
+  Post.destroy_all
+  # Photo Creation
+    photo1 = Post.create!(caption: "rsvp to our upcoming event at Slack HQ!!", user_id: user1.id)
+    photo1.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/coding+ad.jpg"), filename: "coding+ad.jpg")
+
+    photo2 = Post.create!(caption: "decorated living room", user_id: user3.id)
+    photo2.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/BSC-CW-2.jpeg"), filename: "BSC-CW-2.jpeg")
+
+    photo3 = Post.create!(caption: "breakfast set up", user_id: user5.id)
+    photo3.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/DSCF7253.jpeg"), filename: "DSCF7253.jpeg")
+
+    photo4 = Post.create!(caption: "island life", user_id: user2.id)
+    photo4.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/IMG_3879.JPG"), filename: "IMG_3879.JPG")
+
+    photo5 = Post.create!(caption: "bought a new plant", user_id: user3.id)
+    photo5.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO1294.jpeg"), filename: "XOXO1294.jpeg")
+
+    photo6 = Post.create!(caption: "come visit us on Union Street!!", user_id: user8.id)
+    photo6.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO2553.jpeg"), filename: "XOXO2553.jpeg")
+
+    photo7 = Post.create!(caption: "prepping vase for flowers", user_id: user6.id)
+    photo7.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO3081.jpeg"), filename: "XOXO3081.jpeg")
+
+    photo8 = Post.create!(caption: "bought a new cabinet for the living room", user_id: user9.id)
+    photo8.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO6194.jpeg"), filename: "XOXO6194.jpeg")
+
+    photo9 = Post.create!(caption: "cool door", user_id: user2.id)
+    photo9.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO6226.jpeg"), filename: "XOXO6226.jpeg")
+
+    photo10 = Post.create!(caption: "cool steps", user_id: user2.id)
+    photo10.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO6880.jpeg"), filename: "XOXO6880.jpeg")
+
+    photo11 = Post.create!(caption: "wheat field", user_id: user5.id)
+    photo11.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO7086.jpeg"), filename: "XOXO7086.jpeg")
+
+    photo12 = Post.create!(caption: "cutting some fruits", user_id: user6.id)
+    photo12.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO8865-2.jpeg"), filename: "XOXO8865-2.jpeg")
+
+    photo13 = Post.create!(caption: "cutting some fruits", user_id: user6.id)
+    photo13.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO8865-2.jpeg"), filename: "XOXO8865-2.jpeg")
+
+    photo14 = Post.create!(caption: "coffee before code", user_id: user3.id)
+    photo14.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/DSCF7308.jpeg"), filename: "DSCF7308.jpeg")
+
+    photo15 = Post.create!(caption: "a lot of stuff planned for today", user_id: user9.id)
+    photo15.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/DSCF7327.jpeg"), filename: "DSCF7327.jpeg")
+
+    photo16 = Post.create!(caption: "more island life", user_id: user2.id)
+    photo16.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/IMG_3156.jpeg"), filename: "IMG_3156.jpeg")
+
+    photo17 = Post.create!(caption: "i'm the first one in the office", user_id: user5.id)
+    photo17.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO2610.jpeg"), filename: "XOXO2610.jpeg")
+
+    photo18 = Post.create!(caption: "bought some new crafts", user_id: user3.id)
+    photo18.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO2934.jpeg"), filename: "XOXO2934.jpeg")
+
+    photo18 = Post.create!(caption: "nice candle holder", user_id: user3.id)
+    photo18.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO3198.jpeg"), filename: "XOXO3198.jpeg")
+
+    photo24 = Post.create!(caption: "branch at the beach", user_id: user2.id)
+    photo24.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO9923.jpeg"), filename: "XOXO9923.jpeg")
+
+    photo19 = Post.create!(caption: "come visit us at broadway & battery!!", user_id: user4.id)
+    photo19.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/subway+adv.jpg"), filename: "subway+adv.jpg")
+
+    photo29 = Post.create!(caption: "more instax photos", user_id: user5.id)
+    photo29.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO5193.jpeg"), filename: "XOXO5193.jpeg")
+
+    photo20 = Post.create!(caption: "more decorating", user_id: user3.id)
+    photo20.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO5761.jpeg"), filename: "XOXO5761.jpeg")
+
+    photo21 = Post.create!(caption: "this is a cup and a book", user_id: user6.id)
+    photo21.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO5790.jpeg"), filename: "XOXO5790.jpeg")
+
+    photo22 = Post.create!(caption: "christmas wreath", user_id: user9.id)
+    photo22.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO6190.jpeg"), filename: "XOXO6190.jpeg")
+
+    photo23 = Post.create!(caption: "tree stump at the beach", user_id: user2.id)
+    photo23.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO9904.jpeg"), filename: "XOXO9904.jpeg")
+
+    photo25 = Post.create!(caption: "finally put decorations on the shelves", user_id: user3.id)
+    photo25.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO4220.jpeg"), filename: "XOXO4220.jpeg")
+
+    photo26 = Post.create!(caption: "antique store finds", user_id: user2.id)
+    photo26.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO4147.jpeg"), filename: "XOXO4147.jpeg")
+
+    photo27 = Post.create!(caption: "breakfast platter", user_id: user6.id)
+    photo27.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO9813.jpeg"), filename: "XOXO9813.jpeg")
+
+    photo28 = Post.create!(caption: "instax photos", user_id: user5.id)
+    photo28.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/photogram-fsp-seed/XOXO5131.jpeg"), filename: "XOXO5131.jpeg")
 
 end
+    
+    
