@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Photogram, an instagram clone, is a photo sharing application that allows users to publicly share their photos.  Users can upload and create posts with captions.  Users are also able to like other user's posts.  
+
+
 
 Things you may want to cover:
 
