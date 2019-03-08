@@ -3,8 +3,10 @@ import { fetchPost, deletePost, editPost } from '../../actions/posts_actions';
 import PostShow from './post_show';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger 
   return ({
-    post: state.entities.posts[ownProps.match.params.id]
+    post: state.entities.posts[ownProps.match.params.id],
+    userId: state.session.currentUser.id,
   });
 };
 

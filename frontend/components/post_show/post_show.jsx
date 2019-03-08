@@ -59,6 +59,18 @@ class PostShow extends React.Component {
      <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.state.originalPostcaption} onChange={this.update('caption')} /> </div>
     <button onClick={this.handleEditSubmit}>Submit Caption Edit</button>
     </div>
+
+    let edit; 
+    debugger 
+    if (this.props.userId === post.user_id) {
+      edit = <div>
+              <button onClick={this.handleEdit}><i className="fas fa-user-edit"></i></button>
+              <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
+            </div>
+    } else {
+      edit = [];
+    }
+    debugger 
     
 
     return (
@@ -75,9 +87,7 @@ class PostShow extends React.Component {
               <ul className="postUsername"><h2><b>{post.username}</b></h2></ul>
             </div>
             <div className="rightSideHeader">
-            
-              <button onClick={this.handleEdit}><i className="fas fa-user-edit"></i></button>
-              <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
+              {edit}
             </div>
           </div>
           <div className="image">
