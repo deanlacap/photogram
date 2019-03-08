@@ -14,7 +14,7 @@ User Authentication - Users are able to log in and have access to features
 
 Posts - Authenticated users are able to create, edit, and delete their posts.  Users can create posts by uploading a photo with an optional caption.  
 
-Likes - Authenticated users are able to like potss.  Users are able to like a posts once by clicking on the heart and remove that like by clicking on the heart button again.  
+Likes - Authenticated users are able to like posts.  Users are able to like a posts once by clicking on the heart and remove that like by clicking on the heart button again.  
 
 ## . Future Implementations 
 
