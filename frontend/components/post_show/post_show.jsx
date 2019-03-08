@@ -56,13 +56,15 @@ class PostShow extends React.Component {
                   </div>
 
     let blankCaption = <div>
-     <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.state.originalPostcaption} onChange={this.update('caption')} /> </div>
-    <button onClick={this.handleEditSubmit}>Submit Caption Edit</button>
-    </div>
+      <div className="editCaptionParent"><textarea className="editCaption" wrap="hard" placeholder={this.state.originalPostcaption} onChange={this.update('caption')} /> </div>
+        <div className="editSubmitParent">
+          <button className="editSubmitButton" onClick={this.handleEditSubmit}>Submit Caption Edit</button>
+        </div>
+      </div>
 
     let edit; 
     debugger 
-    if (this.props.userId === post.user_id) {
+    if (this.props.userId == post.userId) {
       edit = <div>
               <button onClick={this.handleEdit}><i className="fas fa-user-edit"></i></button>
               <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
